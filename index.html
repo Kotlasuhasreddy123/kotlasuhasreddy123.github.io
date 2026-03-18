@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suhas Reddy Kotla | AI/ML Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --card: #16161f;
+      --border: #2a2a3a;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --grad: linear-gradient(135deg, #7c3aed, #06b6d4);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(10,10,15,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 6%;
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--text); }
+</style>
+</head>
+
+    <!-- HERO -->
+    <style>
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 0 6%; padding-top: 80px;
+      background: radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.1) 0%, transparent 50%);
+    }
+    .hero-content { max-width: 700px; }
+    .hero-badge {
+      display: inline-block; padding: 0.4rem 1rem;
+      background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4);
+      border-radius: 50px; font-size: 0.8rem; color: #a78bfa; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+    .hero h1 span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.2rem; color: var(--accent2); font-weight: 500; margin-bottom: 1.2rem; }
+    .hero p { color: var(--muted); font-size: 1rem; max-width: 580px; margin-bottom: 2rem; line-height: 1.8; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 0.8rem 2rem; background: var(--grad); color: white;
+      border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+      text-decoration: none; font-size: 0.95rem; transition: opacity 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-outline {
+      padding: 0.8rem 2rem; background: transparent;
+      border: 1px solid var(--border); color: var(--text);
+      border-radius: 8px; font-weight: 600; cursor: pointer;
+      text-decoration: none; font-size: 0.95rem; transition: border-color 0.3s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .hero-social { display: flex; gap: 1rem; margin-top: 2rem; }
+    .hero-social a {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+      color: var(--muted); text-decoration: none; transition: all 0.3s;
+    }
+    .hero-social a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+    .scroll-indicator {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: var(--muted); font-size: 0.8rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+    </style>
+
+    <!-- SECTIONS STYLES -->
+    <style>
+    section { padding: 6rem 6%; }
+    .section-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; color: var(--accent2); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+    .section-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-desc { color: var(--muted); max-width: 600px; margin-bottom: 3rem; }
+    .divider { width: 60px; height: 3px; background: var(--grad); border-radius: 2px; margin-bottom: 3rem; }
+
+    /* SKILLS */
+    #skills { background: var(--bg2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .skill-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.8rem; transition: border-color 0.3s, transform 0.3s;
+    }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .skill-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .skill-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      padding: 0.3rem 0.8rem; background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.25); border-radius: 50px;
+      font-size: 0.78rem; color: #a78bfa;
+    }
+    .tag.cyan { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.25); color: #67e8f9; }
+
+    /* EXPERIENCE */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background: linear-gradient(to bottom, var(--accent), var(--accent2)); border-radius:2px; }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2.45rem; top: 0.3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--grad); border: 2px solid var(--bg);
+    }
+    .timeline-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.8rem; transition: border-color 0.3s;
+    }
+    .timeline-card:hover { border-color: var(--accent); }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .timeline-title { font-size: 1.05rem; font-weight: 700; }
+    .timeline-date { font-size: 0.8rem; color: var(--accent2); background: rgba(6,182,212,0.1); padding: 0.2rem 0.8rem; border-radius: 50px; white-space: nowrap; }
+    .timeline-company { color: var(--accent); font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; }
+    .timeline-card ul { padding-left: 1.2rem; }
+    .timeline-card li { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.6; }
+    </style>
+
+    <!-- PROJECTS + EDUCATION + CONTACT STYLES -->
+    <style>
+    /* PROJECTS */
+    #projects { background: var(--bg2); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad);
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(124,58,237,0.15); }
+    .project-card.featured::before { height: 4px; }
+    .project-badge {
+      display: inline-block; padding: 0.25rem 0.8rem;
+      background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 50px; font-size: 0.75rem; color: #a78bfa; margin-bottom: 1rem;
+    }
+    .project-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .project-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .project-links { display: flex; gap: 1rem; }
+    .project-links a {
+      font-size: 0.85rem; color: var(--accent2); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem; transition: color 0.3s;
+    }
+    .project-links a:hover { color: var(--text); }
+
+    /* EDUCATION */
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .edu-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2rem; transition: border-color 0.3s;
+    }
+    .edu-card:hover { border-color: var(--accent2); }
+    .edu-degree { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .edu-school { color: var(--accent2); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .edu-date { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .edu-gpa { display: inline-block; padding: 0.25rem 0.8rem; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.3); border-radius: 50px; font-size: 0.8rem; color: #67e8f9; }
+
+    /* CERTIFICATIONS */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .cert-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.3s;
+    }
+    .cert-card:hover { border-color: var(--accent); }
+    .cert-icon { font-size: 1.5rem; }
+    .cert-card span { font-size: 0.85rem; color: var(--muted); }
+
+    /* CONTACT */
+    #contact { background: var(--bg2); text-align: center; }
+    .contact-card {
+      max-width: 600px; margin: 0 auto;
+      background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 3rem;
+    }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.8rem 1.5rem; background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.3); border-radius: 10px;
+      color: var(--text); text-decoration: none; font-size: 0.9rem; transition: all 0.3s;
+    }
+    .contact-link:hover { background: rgba(124,58,237,0.2); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      nav { padding: 1rem 4%; }
+      .nav-links { gap: 1rem; }
+      section { padding: 4rem 4%; }
+      .hero { padding: 0 4%; padding-top: 80px; }
+    }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Suhas Reddy Kotla</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="about" style="position:relative;">
+      <div class="hero-content">
+        <div class="hero-badge">🎓 MS in Artificial Intelligence @ Lewis University</div>
+        <h1>Hi, I'm <span>Suhas Reddy Kotla</span></h1>
+        <div class="hero-sub">AI/ML Engineer & Graduate Researcher</div>
+        <p>
+          AI/ML Graduate Assistant with a 4.0 GPA, hands-on experience in LLM fine-tuning, MLOps pipeline development,
+          and GenAI/Agentic systems. Passionate about building AI solutions that solve real-world problems.
+          Seeking Summer/Fall 2026 internship in Generative AI, ML Engineering, or MLOps.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/kotla-suhas-reddy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Kotlasuhasreddy123" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:suhasreddykotla222@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label">What I work with</div>
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+      <div class="divider"></div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-icon">🤖</div>
+          <h3>Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+            <span class="tag">Scikit-Learn</span><span class="tag">Hugging Face</span>
+            <span class="tag">Ollama</span><span class="tag">Computer Vision</span><span class="tag">NLP</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">☁️</div>
+          <h3>MLOps & Cloud</h3>
+          <div class="skill-tags">
+            <span class="tag cyan">AWS SageMaker</span><span class="tag cyan">AWS Bedrock</span>
+            <span class="tag cyan">AWS Rekognition</span><span class="tag cyan">MLflow</span>
+            <span class="tag cyan">Apache Airflow</span><span class="tag cyan">Dataiku</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">💻</div>
+          <h3>Programming & Tools</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span>
+            <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Docker</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">📊</div>
+          <h3>Data & Visualization</h3>
+          <div class="skill-tags">
+            <span class="tag cyan">Pandas</span><span class="tag cyan">NumPy</span>
+            <span class="tag cyan">Power BI</span><span class="tag cyan">Tableau</span>
+            <span class="tag cyan">MySQL</span><span class="tag cyan">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">🌐</div>
+          <h3>Web & Backend</h3>
+          <div class="skill-tags">
+            <span class="tag">Python Flask</span><span class="tag">REST APIs</span>
+            <span class="tag">HTML5/CSS3</span><span class="tag">JavaScript</span>
+            <span class="tag">Boto3</span><span class="tag">DynamoDB</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">🧠</div>
+          <h3>GenAI & LLMs</h3>
+          <div class="skill-tags">
+            <span class="tag">LLM Fine-tuning</span><span class="tag">Prompt Engineering</span>
+            <span class="tag">AI Agents</span><span class="tag">RAG</span>
+            <span class="tag">Claude 3 Haiku</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label">My Journey</div>
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <div class="divider"></div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Graduate Assistant — Artificial Intelligence</div>
+              <div class="timeline-date">Jan 2026 – Present</div>
+            </div>
+            <div class="timeline-company">Lewis University, Romeoville, IL</div>
+            <ul>
+              <li>Developing a medical data research project using ML techniques to predict 34 Immune Markers and 136 attributes to aid real-time patient diagnosis at Rosalind Franklin Hospital under Prof. Dr. Osama Sam Abuomar (Director of AI).</li>
+              <li>Managing and monitoring High-Performance Computing (HPC) infrastructure, ensuring stability of compute nodes, storage, and software environments.</li>
+              <li>Supporting research users by configuring environments, troubleshooting job execution, and resolving HPC-related issues.</li>
+              <li>Maintaining comprehensive technical documentation and providing user guidance on research tools and workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Machine Learning Fellow</div>
+              <div class="timeline-date">Oct 2025 – Present</div>
+            </div>
+            <div class="timeline-company">Handshake AI, Remote</div>
+            <ul>
+              <li>Developed 100+ domain-specific prompts for LLMs, achieving a 95% quality approval rate across classification and summarization tasks.</li>
+              <li>Evaluating and revising LLM responses to ensure alignment with rigorous research quality standards.</li>
+              <li>Analyzing model failure modes to iterate on prompt templates and improve response fidelity.</li>
+              <li>Managing high-impact AI projects within an asynchronous, remote environment using self-directed workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">AI Agent Intern</div>
+              <div class="timeline-date">Sep 2025 – Nov 2025</div>
+            </div>
+            <div class="timeline-company">ULIMO Inc., Remote</div>
+            <ul>
+              <li>Constructed and integrated full-stack AI-powered automations to improve organizational efficiency by 150%.</li>
+              <li>Automated organizational services and boosted social media reach using AI agents such as Sentra.AI and Make.</li>
+              <li>Resolved integration bottlenecks between AI agent platforms and existing service APIs.</li>
+              <li>Collaborated under direct executive mentorship from John Snee, CEO, to align AI initiatives with business goals.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Data Analytics Intern</div>
+              <div class="timeline-date">Jun 2023 – Jul 2023</div>
+            </div>
+            <div class="timeline-company">IBM Skills Build & CSRBOX, Remote</div>
+            <ul>
+              <li>Executed data preprocessing, feature engineering, and model implementation, increasing model accuracy from 88% to 93.45%.</li>
+              <li>Designed a Smart Music Recommender using data analytics and machine learning techniques.</li>
+              <li>Utilized Python and SQL/MySQL to process and analyze datasets, ensuring data accuracy and reliability.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">What I've built</div>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <div class="divider"></div>
+      <div class="projects-grid">
+
+        <div class="project-card featured">
+          <div class="project-badge">⭐ Featured Project</div>
+          <h3>Gro-Sential AI — Food Waste Reduction Platform</h3>
+          <p>Full-stack AI-powered web app addressing the $1,500/year food waste problem. Uses AWS Bedrock (Claude 3 Haiku) for smart alerts and recipe generation, Rekognition for food detection, and DynamoDB for scalable storage. Achieved 40-60% waste reduction for beta users.</p>
+          <div class="project-tech">
+            <span class="tag">AWS Bedrock</span><span class="tag">AWS Rekognition</span>
+            <span class="tag cyan">DynamoDB</span><span class="tag cyan">Python Flask</span>
+            <span class="tag">Claude 3 Haiku</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://builder.aws.com/content/3AjyCEomS3A3EW2rRuRWuoR8Af7/aideas-gro-sential-ai-ai-powered-food-waste-reduction-platform" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo & Article</a>
+            <a href="https://github.com/Kotlasuhasreddy123/Gro-Sential-AI" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-badge">🏥 Research Project</div>
+          <h3>Medical Immune Marker Prediction</h3>
+          <p>ML research project predicting 34 Immune Markers along with 136 patient attributes to aid real-time diagnosis at Rosalind Franklin Hospital. Built under Prof. Dr. Osama Sam Abuomar, Director of AI at Lewis University.</p>
+          <div class="project-tech">
+            <span class="tag">Python</span><span class="tag">TensorFlow</span>
+            <span class="tag cyan">HPC</span><span class="tag cyan">Medical ML</span>
+            <span class="tag">Scikit-Learn</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-badge">🎵 Data Science</div>
+          <h3>Smart Music Recommender</h3>
+          <p>Data analytics and ML-based music recommendation system. Improved model accuracy from 88% to 93.45% through feature engineering and model optimization using Python and SQL/MySQL.</p>
+          <div class="project-tech">
+            <span class="tag">Python</span><span class="tag">SQL/MySQL</span>
+            <span class="tag cyan">Scikit-Learn</span><span class="tag cyan">Pandas</span>
+            <span class="tag">NumPy</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" style="background: var(--bg2);">
+      <div class="section-label">Academic Background</div>
+      <h2 class="section-title">My <span>Education</span></h2>
+      <div class="divider"></div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-degree">Master of Science in Artificial Intelligence</div>
+          <div class="edu-school">Lewis University, Romeoville, IL</div>
+          <div class="edu-date">Expected December 2026</div>
+          <span class="edu-gpa">GPA: 4.0 / 4.0</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Technology in Computer Science & Business Systems</div>
+          <div class="edu-school">VNR Vignana Jyothi Institute of Engineering & Technology, India</div>
+          <div class="edu-date">May 2025</div>
+          <span class="edu-gpa">CGPA: 7.25 / 10</span>
+        </div>
+      </div>
+
+      <br/><br/>
+      <div class="section-label">Certifications</div>
+      <h3 style="font-size:1.3rem; font-weight:600; margin-bottom:1.5rem;">Credentials & <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Certifications</span></h3>
+      <div class="cert-grid">
+        <div class="cert-card"><div class="cert-icon">🏅</div><span>AWS Academy Graduate — Machine Learning Foundations</span></div>
+        <div class="cert-card"><div class="cert-icon">🤖</div><span>Handshake AI Model Validation 1 — Trainer</span></div>
+        <div class="cert-card"><div class="cert-icon">📊</div><span>Tata Forage — Data Visualisation: Empowering Business</span></div>
+        <div class="cert-card"><div class="cert-icon">🔐</div><span>Google Coursera — Foundations of Cybersecurity</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Let's connect</div>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="divider" style="margin: 0 auto 2rem;"></div>
+      <div class="contact-card">
+        <p style="color:var(--muted); margin-bottom:1rem;">I'm always open to discussing new opportunities, research collaborations, or just having a chat about AI and technology.</p>
+        <p style="color:var(--muted);">Seeking Summer/Fall 2026 internship in Generative AI, ML Engineering, or MLOps.</p>
+        <div class="contact-links">
+          <a href="mailto:suhasreddykotla222@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email Me</a>
+          <a href="https://www.linkedin.com/in/kotla-suhas-reddy" target="_blank" class="contact-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/Kotlasuhasreddy123" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Designed & Built by Suhas Reddy Kotla &nbsp;|&nbsp; 2026</p>
+    </footer>
+
+    <script>
+      // Smooth active nav highlight
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + current ? '#e2e8f0' : '';
+        });
+      });
+
+      // Fade-in on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.skill-card, .timeline-card, .project-card, .edu-card, .cert-card').forEach(el => {
+        el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
